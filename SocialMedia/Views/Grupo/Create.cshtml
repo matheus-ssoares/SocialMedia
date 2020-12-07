@@ -1,0 +1,63 @@
+﻿@model SocialMedia.Models.Grupo
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+    <link type="text/css" rel="stylesheet" href="~/css/registerPage.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <header><embed src="~/assets/arrow_back.svg" /><a asp-action="Index" asp-controller="Grupo">Voltar</a><h2>Grupo</h2></header>
+
+    <header><embed src="~/assets/arrow_back.svg" /><a asp-action="" asp-controller="Grupo">Voltar</a><h2>Grupo</h2></header>
+
+<main>
+    <form asp-action="Create" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-container">
+            <div class="first-line">
+                <div class="inputs-container">
+                    <label asp-for="Nome" class="standard-label"></label>
+                    <input asp-for="Nome" class="basic-input" />
+                    <span asp-validation-for="Nome"></span>
+                </div>
+            </div>
+            <div class="second-line">
+                <div class="inputs-container">
+                    <label asp-for="Descricao" class="standard-label"></label>
+                    <input asp-for="Descricao" class="basic-input" />
+                    <span asp-validation-for="Descricao"></span>
+                </div>
+            </div>
+            <div class="third-line">
+                <div id="imagem" class="form-group">
+                    <label asp-for="imagem">Imagem:</label>
+                    <input type="file" class="form-control-file" name="file" />
+                </div>
+
+            </div>
+            <input type="submit" value="Criar" class="finish-button" />
+        </div>
+   
+    </form>
+    
+</main>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+</body>
+</html>

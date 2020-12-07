@@ -1,0 +1,100 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cadastre-se</title>
+    <link type="text/css" rel="stylesheet" href="~/css/registerPage.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header><embed src="~/assets/arrow_back.svg" /><a asp-action="Index" asp-controller="User">Voltar</a><h2>Usuário</h2></header>
+    <main>
+        <form asp-action="UserRegister" asp-controller="User" method="post">
+            <div class="form-container">
+
+                <div class="first-line">
+                    <div class="inputs-container">
+                        <label for="nome" class="standard-label">Nome:</label>
+                        <input id="nome" type="text" placeholder="Nome" name="txtName" class="basic-input" />
+                    </div>
+                </div>
+                <div class="second-line">
+                    <div class="input-email-container">
+                        <label for="Email" class="standard-label">Email:</label>
+                        <input id="Email" type="email" placeholder="Email" name="txtEmail" class="basic-input" />
+                    </div>
+                    <div class="input-born-date-container">
+                        <label for="dataDeNascimento" class="standard-label">Data de nascimento:</label>
+                        <input id="dataDeNascimento" type="text" placeholder="00/00/0000" name="txtBornDate" class="basic-input" />
+
+                    </div>
+                </div>
+                <div class="third-line">
+                    <div class="input-cpf-container">
+                        <label for="cpf" class="standard-label">CPF:</label>
+                        <input id="cpf" type="text" placeholder="Cpf" name="txtCpf" class="basic-input" />
+                    </div>
+                    <div class="input-phone-container">
+                        <label for="telefone" class="standard-label">Telefone:</label>
+                        <input id="telefone" type="text" placeholder="Telefone" name="txtPhone" class="basic-input" />
+                    </div>
+                </div>
+                <div class="fourth-line">
+
+                    <div class="input-state-container">
+                        <label for="estado" class="standard-label">Estado:</label>
+                        <input id="estado" type="text" placeholder="Estado" name="txtState" class="basic-input" />
+
+                    </div>
+                    <div class="input-city-container">
+                        <label for="cidade" class="standard-label">Cidade:</label>
+                        <input id="cidade" type="text" placeholder="Cidade" name="txtCity" class="basic-input" />
+                    </div>
+
+
+
+                </div>
+                <div class="third-line">
+
+                    <div class="input-city-container">
+                        <label for="pass" class="standard-label">Senha:</label>
+                        <input id="pass" type="password" placeholder="Senha" name="txtPassword" class="basic-input" />
+                    </div>
+                </div>
+                <div class="fifth-line">
+                    <label for="genero" class="standard-label">Gênero:</label>
+                    <div class="radio-inputs-genre-container">
+                        <div class="input-genre-container">
+                            <label for="genero" class="input-radio-label">Masculino:</label>
+                            <input id="masculino" value="Masculino" type="radio" placeholder="Genero" name="txtGenre" />
+
+                        </div>
+                        <div class="input-genre-container">
+                            <label for="genero" class="input-radio-label">Feminino:</label>
+                            <input id="genero" value="Feminino" type="radio" placeholder="Genero" name="txtGenre" />
+
+                        </div>
+                        <div class="input-genre-container">
+                            <label for="genero" class="input-radio-label">Outro:</label>
+                            <input id="genero" type="radio" value="Outro" placeholder="Genero" name="txtGenre" />
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <input type="submit" value="Finalizar" class="finish-button" />
+            </div>
+
+</form>
+    </main>
+
+</body>
+</html>

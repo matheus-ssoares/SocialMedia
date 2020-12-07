@@ -1,0 +1,153 @@
+﻿@model IEnumerable<SocialMedia.Models.Grupo>
+
+
+@{
+    Layout = null;
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Grupos</title>
+    <link type="text/css" rel="stylesheet" href="~/css/groupIndex.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,300&display=swap"
+          rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <main>
+        <div class="left-content">
+            <div class="menu-items-container">
+                <div class="menu-item">
+                    <a asp-controller="HomePage" asp-action="HomePage">Página inicial</a>
+                </div>
+
+                <div class="menu-item">
+                    <a asp-action="Create">Novo Grupo</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="center-content">
+            @foreach (var item in Model)
+            {
+                
+
+
+                    <div class="group-card">
+                        <img src="~/images/@item.imagem"
+                             alt="@item.Descricao"  />
+
+                        <div class="group-informations">
+                            <h3> @Html.DisplayFor(modelItem => item.Nome)</h3>
+                            <p> @Html.DisplayFor(modelItem => item.Descricao)</p>
+                            <div class="subscriptions-and-author-informations">
+
+                                @{
+                                    string valor;
+
+                                    if (item.user.Id == ViewBag.userId)
+                                    {
+                                        valor = "Entrar";
+                                    }
+                                    else
+                                    {
+                                        if (item.inscricoesGrupos.Find(x => x.user.Id == ViewBag.userId && x.status == "accept") != null)
+                                        {
+
+                                            valor = "Entrar";
+                                        }
+                                        else if (item.inscricoesGrupos.Find(x => x.user.Id == ViewBag.userId && x.status == "pending") != null)
+                                        {
+
+                                            valor = "Solicitado";
+                                        }
+                                        else
+                                        {
+                                            valor = "inscrever-se";
+                                        }
+                                    }
+
+                                }
+                                <span>@item.user.name</span> <a asp-action="verify" asp-route-id="@item.Id">@valor</a>
+                            </div>
+                        </div>
+                      
+                       
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+
+                    </div>
+                
+            }
+        </div>
+        <div class="right-content">
+
+        </div>
+    </main>
+</body>
+</html>
+<script>
+
+    var url = "http://servicodados.ibge.gov.br/api/v3/noticias/?qtd=100";
+
+
+
+
+    fetch(url, { method: "GET" })
+        .then(response => response.json())
+        .then(json => {
+
+
+
+
+
+
+
+
+            for (i = 0; i < 10; i++) {
+                let number = Math.floor(Math.random() * 100)
+                let mainDiv = document.createElement('div')
+
+                mainDiv.className = "small-releases"
+
+
+                let newDiv = document.createElement('div')
+                newDiv.className = "photo-and-link"
+
+
+                var h3 = document.createElement("h3");
+                var obj = $.parseJSON(json.items[number].imagens)
+
+
+                var a = document.createElement("a");
+                var image = document.createElement("img");
+
+                newDiv.append(a,image)
+
+                image.src = "https://agenciadenoticias.ibge.gov.br/" + obj.image_intro;
+
+                h3.innerHTML = json.items[number].titulo
+                a.innerHTML = json.items[number].introducao
+
+                a.href = json.items[number].link
+
+                mainDiv.append(h3, newDiv)
+
+                $(".right-content").append(mainDiv)
+
+
+
+
+            }
+        })
+        .catch(error => console.log(error));
+</script>

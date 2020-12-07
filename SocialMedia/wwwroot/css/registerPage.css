@@ -1,0 +1,258 @@
+﻿html {
+    width: 100vw;
+    height: 100vh;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 20px;
+}
+
+    body header {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        margin-left: 46px;
+        justify-self: flex-start;
+        align-self: self-start;
+        height: 250px;
+    }
+
+        body header a {
+            font-size: 1.2rem;
+            font-family: 'Poppins', light;
+            font-weight: 300;
+            text-decoration: none;
+        }
+
+        body header span:hover {
+            cursor: pointer;
+        }
+
+        body header h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4.2rem;
+            margin-bottom: 50px;
+            color: #8F0514;
+            margin-left: 54px;
+            margin-bottom: 0;
+        }
+
+    body main {
+        display: flex;
+        flex-direction: row;
+        align-self: center;
+        width: 100%;
+        justify-content: center;
+        height: auto;
+    }
+
+        body main form {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+            body main form .standard-label {
+                font-size: 0.9rem;
+                font-family: 'Poppins', light;
+                font-weight: 300;
+                margin-bottom: 4px;
+            }
+
+            body main form .input-radio-label {
+                font-size: 0.9rem;
+                font-family: 'Poppins', light;
+                font-weight: 300;
+            }
+
+            body main form .basic-input {
+                height: 23px;
+                border: solid 1px #c9c9c9;
+                border-radius: 5px;
+                padding: 5px;
+            }
+            body main form .form-container .inputs-container .standard-label {
+                font-size: 0.9rem;
+                font-family: 'Poppins', light;
+                font-weight: 300;
+                margin-bottom: 4px;
+            }
+            body main form .form-container .inputs-container .basic-input {
+                height: 23px;
+                border: solid 1px #c9c9c9;
+                border-radius: 5px;
+                padding: 5px;
+            }
+
+            body main form .basic-input:focus {
+                outline: none;
+            }
+
+            body main form .form-container {
+                width: 450px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+                body main form .form-container .finish-button {
+                    height: 32px;
+                    margin-top: 16px;
+                    border: none;
+                    border-radius: 6px;
+                    background: #8F0514;
+                    color: white;
+                    font-size: 1.2rem;
+                    font-family: 'Poppins', light;
+                    font-weight: 300;
+                }
+
+                    body main form .form-container .finish-button:hover {
+                        cursor: pointer;
+                    }
+
+                body main form .form-container .first-line, .second-line, .third-line, fourth-line {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: flex-start;
+                    width: 100%;
+                    margin-bottom: 17px;
+                }
+
+                    body main form .form-container .first-line .inputs-container {
+                        display: flex;
+                        flex-direction: column;
+                        width: 100%;
+                    }
+
+
+                        body main form .form-container .first-line .inputs-container label {
+                            font-size: 1.0rem;
+                        }
+
+                body main form .form-container .second-line .inputs-container {
+                    flex: 2;
+                    display: flex;
+                    flex-direction: column;
+                    margin-right: 27px;
+                }
+
+
+                body main form .form-container .second-line .input-email-container {
+                    flex: 2;
+                    display: flex;
+                    flex-direction: column;
+                    margin-right: 27px;
+                }
+
+                body main form .form-container .second-line .input-born-date-container {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                body main form .form-container .third-line {
+                    display: flex;
+                    flex-direction: row;
+                    width: 100%;
+                    justify-content: flex-start;
+                    align-items: center;
+                    margin-bottom: 17px;
+                }
+
+
+                    body main form .form-container .third-line .input-cpf-container {
+                        flex: 1;
+                        display: flex;
+                        flex-direction: column;
+                        margin-right: 27px;
+                    }
+
+
+                    body main form .form-container .third-line .input-phone-container input {
+                        flex: 1;
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+
+
+
+
+
+
+                body main form .form-container .fourth-line {
+                    display: flex;
+                    flex-direction: row;
+                    width: 100%;
+                    justify-content: flex-start;
+                    align-items: center;
+                    margin-bottom: 17px;
+                }
+
+
+                    body main form .form-container .fourth-line .input-state-container {
+                        flex: 1;
+                        display: flex;
+                        flex-direction: column;
+                        margin-right: 27px;
+                    }
+
+
+                    body main form .form-container .fourth-line .input-city-container {
+                        flex: 1;
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+
+
+
+                body main form .form-container .fifth-line {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    justify-content: flex-start;
+                    align-items: center;
+                    margin-bottom: 17px;
+                    align-items: self-start;
+                }
+
+                    body main form .form-container .fifth-line .radio-inputs-genre-container {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        border: solid 1px #c9c9c9;
+                        padding-bottom: 8px;
+                        padding-top: 8px;
+                        padding-left: 8px;
+                        padding-right: 8px;
+                        border-radius: 7px;
+                    }
+
+
+                        body main form .form-container .fifth-line .radio-inputs-genre-container .input-genre-container {
+                            flex: 1;
+                            display: flex;
+                            flex-direction: row;
+                            margin-right: 27px;
+                            align-items: center;
+                        }
+
+                            body main form .form-container .fifth-line .radio-inputs-genre-container .input-genre-container label {
+                                margin-right: 5px;
+                            }
